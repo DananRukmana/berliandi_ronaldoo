@@ -1,0 +1,384 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-to-left {
+  to {
+    transform: translateX(-30px);
+  }
+}
+
+@keyframes slide-from-right {
+  from {
+    transform: translateX(30px);
+  }
+}
+
+.login-container,
+.register-container {
+  min-height: calc(100vh - 70px);
+  padding: 20px;
+}
+
+.login-form-container,
+.register-form-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 30px 0;
+  border-radius: 20px;
+}
+
+/* Small mobile devices (width < 350px) */
+@media screen and (max-width: 350px) {
+  .login-form-container,
+  .register-form-container {
+    padding: 25px 15px;
+  }
+
+  .login__title,
+  .register__title {
+    font-size: 1.8rem;
+  }
+
+  .login-form input,
+  .register-form input,
+  .register-form input {
+    padding: 12px 12px 12px 40px;
+    font-size: 0.95rem;
+  }
+
+  .login-form__form-buttons .btn,
+  .register-form__form-buttons .btn {
+    padding: 12px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .not-found-graphic {
+    height: 180px;
+  }
+
+  .not-found-circle {
+    width: 160px;
+    height: 160px;
+  }
+
+  .not-found-title {
+    font-size: 100px;
+  }
+
+  .not-found-subtitle {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (width > 600px) {
+  ::view-transition-old(root) {
+    animation:
+      fade-out 80ms cubic-bezier(0.4, 0, 1, 1) both,
+      slide-to-left 250ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+
+  ::view-transition-new(root) {
+    animation:
+      fade-in 170ms cubic-bezier(0, 0, 0.2, 1) 80ms both,
+      slide-from-right 250ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+
+  /* MAIN */
+  /* LOGIN & REGISTER */
+  .login-container,
+  .register-container {
+    padding: 30px 20px;
+    background: linear-gradient(135deg, rgba(94, 59, 115, 0.02) 0%, rgba(157, 103, 182, 0.04) 100%);
+  }
+
+  .login-form-container,
+  .register-form-container {
+    max-width: 450px;
+    /* padding: 40px; */
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(94, 59, 115, 0.08);
+  }
+
+  .login__title,
+  .register__title {
+    font-size: 2.2rem;
+  }
+
+  .login-form .form-control,
+  .register-form .form-control {
+    margin-bottom: 25px;
+  }
+
+  .login-form__form-buttons,
+  .register-form__form-buttons {
+    margin-top: 30px;
+  }
+
+  /* Use existing form buttons row layout */
+  .login-form__form-buttons,
+  .register-form__form-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  /* Report detail */
+  .report-detail__images {
+    height: 400px;
+  }
+
+  .report-detail__body-container {
+    inset-block-start: -150px;
+  }
+
+  /* New documentations */
+  .new-form__documentations__buttons {
+    flex-direction: row;
+  }
+
+  .new-form__documentations__outputs {
+    grid-template-columns: repeat(2, minmax(200px, 300px));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .report-detail__images {
+    height: 300px;
+  }
+
+  .report-detail__body-container {
+    margin-top: -50px;
+  }
+
+  .report-detail__body {
+    padding: 30px 20px;
+  }
+
+  .report-detail__title {
+    font-size: 1.8rem;
+  }
+
+  .report-detail__coordinates {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .report-detail__map__container {
+    height: 350px;
+  }
+
+  .report-detail__action-btn {
+    padding: 12px 20px;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .report-detail__images {
+    height: 550px;
+  }
+
+  .report-detail__body-container {
+    margin-top: -100px;
+  }
+
+  .report-detail__body {
+    padding: 50px;
+  }
+
+  .report-detail__title {
+    font-size: 2.8rem;
+  }
+
+  .report-detail__actions {
+    justify-content: flex-start;
+  }
+
+  .report-detail__action-btn {
+    width: auto;
+  }
+}
+
+@media screen and (width > 800px) {
+  /* Authentication pages */
+  .login-container,
+  .register-container {
+    min-height: calc(100vh - 80px);
+    padding: 0 20px;
+  }
+
+  .login-form-container,
+  .register-form-container {
+    /* padding: 45px; */
+    box-shadow: 0 20px 50px rgba(94, 59, 115, 0.1);
+    transition: transform 0.2s ease;
+    border: 1px solid rgba(94, 59, 115, 0.05);
+    animation: none;
+    will-change: auto;
+  }
+
+  /* Hover effects for non-touch devices */
+  .login-form-container:hover,
+  .register-form-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 25px 60px rgba(94, 59, 115, 0.15);
+  }
+
+  .login-form__form-buttons .btn:hover,
+  .register-form__form-buttons .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(94, 59, 115, 0.3);
+  }
+
+  /* MAIN */
+  .reports-list__map__container,
+  .reports-list__map {
+    height: 550px;
+  }
+
+  .reports-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  /* Report detail */
+  .report-detail__body-container {
+    inset-block-start: -200px;
+  }
+
+  .report-detail__images {
+    height: 500px;
+  }
+
+  /* New documentations */
+  .new-form__documentations__outputs {
+    grid-template-columns: repeat(3, minmax(200px, 300px));
+  }
+
+  /* FOOTER */
+  .footer-content {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (width > 1000px) {
+  /* HEADER */
+  .navigation-drawer {
+    min-height: auto;
+    width: auto;
+    padding: 0;
+    background-color: transparent;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: end;
+    position: static;
+    transform: translateX(0);
+    opacity: 1;
+    box-shadow: none;
+  }
+
+  .navigation-drawer__navlist-main,
+  .navigation-drawer__navlist {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+  }
+
+  .navigation-drawer__navlist-main li a,
+  .navigation-drawer__navlist-main li button,
+  .navigation-drawer__navlist li a,
+  .navigation-drawer__navlist li button {
+    width: auto;
+    padding: 8px 15px;
+  }
+
+  .navigation-drawer__navlist-main li a:hover,
+  .navigation-drawer__navlist-main li button:hover,
+  .navigation-drawer__navlist li a:hover,
+  .navigation-drawer__navlist li button:hover {
+    transform: translateY(-2px);
+    background-color: transparent;
+  }
+
+  .new-report-button {
+    padding: 10px 20px !important;
+  }
+
+  .drawer-button {
+    display: none;
+  }
+
+  /* Authentication pages */
+  .login-container,
+  .register-container {
+    padding: 40px;
+    min-height: calc(100vh - 80px);
+    background: linear-gradient(135deg, rgba(94, 59, 115, 0.03) 0%, rgba(157, 103, 182, 0.06) 100%);
+  }
+
+  .login-form-container,
+  .register-form-container {
+    max-width: 480px;
+  }
+
+  .login__title,
+  .register__title {
+    font-size: 2.4rem;
+  }
+
+  .login-form input,
+  .register-form input {
+    padding: 16px 16px 16px 48px;
+    font-size: 1.05rem;
+  }
+
+  .login-form__form-buttons .btn,
+  .register-form__form-buttons .btn {
+    padding: 16px;
+    font-size: 1.05rem;
+  }
+
+  /* MAIN */
+  .reports-list__map__container,
+  .reports-list__map {
+    height: 600px;
+    border-radius: 16px;
+  }
+
+  .reports-list {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+
+  .report-detail__images {
+    height: 600px;
+  }
+}
+
+@media screen and (width > 1200px) {
+  /* Authentication pages */
+  .login-form-container,
+  .register-form-container {
+    max-width: 500px;
+  }
+
+  .reports-list__map__container {
+    height: 600px;
+  }
+
+  .reports-list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+  }
+}
